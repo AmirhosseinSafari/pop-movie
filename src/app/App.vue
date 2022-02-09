@@ -1,7 +1,7 @@
 <template>
     <div>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light pop-header">
             <div class="container-fluid">
             <router-link class="navbar-brand" to="/landingpage">پاپ مووی</router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="تبدیل">
@@ -77,8 +77,6 @@ export default {
 };
 </script>
 
-<style scoped>
-    .for_link{
-        text-decoration: none;
-    }
+<style src="../static/style/pop-style.css">
+    
 </style>
