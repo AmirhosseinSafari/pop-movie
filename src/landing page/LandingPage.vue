@@ -4,6 +4,7 @@
         v-for="movie in allmovies.movies" 
         :key="movie.id"
         >
+        <router-link :to="'/movie/' + movie.id">
             <div :id="movie.id"  
                 class="" >{{movie.title}}
             </div>
@@ -15,7 +16,8 @@
             <h5>top casts:</h5>
             <div v-for="actor in movie.cast.slice(0,5)" :key="actor">
                 {{actor}}
-            </div>        
+            </div>
+        </router-link>        
         </div>
     </div>
 </template>
