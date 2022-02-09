@@ -3,7 +3,7 @@ import { router } from '../_helpers';
 
 const user = JSON.parse(localStorage.getItem('user'));
 const state = user
-    ? { status: { loggedIn: true }, user }
+    ? { status: { loggedIn: true }, user, interests: [] }
     : { status: {}, user: null };
 
 const actions = {
@@ -44,7 +44,9 @@ const actions = {
                     dispatch('alert/error', error, { root: true });
                 }
             );
-    }
+    },
+    
+
 };
 
 const mutations = {

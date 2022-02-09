@@ -5,16 +5,6 @@ const state = {
 };
 
 const actions = {
-    getAll({ commit }) {
-        commit('getAllRequest');
-
-        userService.getAll()
-            .then(
-                users => commit('getAllSuccess', users),
-                error => commit('getAllFailure', error)
-            );
-    },
-
     delete({ commit }, id) {
         commit('deleteRequest', id);
 
@@ -27,15 +17,6 @@ const actions = {
 };
 
 const mutations = {
-    getAllRequest(state) {
-        state.all = { loading: true };
-    },
-    getAllSuccess(state, users) {
-        state.all = { items: users };
-    },
-    getAllFailure(state, error) {
-        state.all = { error };
-    },
     deleteRequest(state, id) {
         // add 'deleting:true' property to user being deleted
         state.all.items = state.all.items.map(user =>
