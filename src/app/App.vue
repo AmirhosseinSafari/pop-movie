@@ -1,9 +1,10 @@
 <template>
     <div>
     <header>
-        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+        <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light pop-header">
             <div class="container-fluid">
-            <router-link class="navbar-brand" to="/landingpage">پاپ مووی</router-link>
+            <router-link class="navbar-brand" to="/landingpage"> <img src="src/static/images/header-logo.png" alt="PopMovie"> </router-link>
+            <span class="navbar-brand pop-header-desc">سریعتر از همیشه فیلم های مورد علاقتو پیدا کن.</span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="تبدیل">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,13 +28,13 @@
 
                 <ul class="d-flex navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item login">
-                        <router-link to="/login" class="btn btn-link for_link">ورود</router-link>
+                        <router-link to="/login" class="btn btn-link pop-link">ورود</router-link>
                     </li>
-
                     <li class="nav-item signup">
-                        <router-link to="/register" class="btn btn-link for_link">عضویت</router-link> 
+                        <router-link to="/register" class="btn btn-link pop-link">عضویت</router-link> 
                     </li>
                 </ul>
+
 
             </div>
             </div>
@@ -77,8 +78,54 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+    :root{
+        --gray:#767676;
+        --orange:#FF7A00;
+    }
+
+   @font-face {
+    font-family: BYekan;
+    src: url(/src/static/fonts/BYekan+Bold.ttf);
+    font-weight: bold;
+    }
+
+    @font-face {
+    font-family: BYekan;
+    src: url(/src/static/fonts/BYekan+.ttf);
+    font-weight: normal;
+    }
+    *{
+        font-family: BYekan;
+        transition-duration: 0.4s;
+    }
+
     .for_link{
         text-decoration: none;
+    }
+
+    .pop-header{
+        background-color:white;
+        height: 83px;
+        box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.1);
+    }
+    .pop-header-desc{
+        font-size: 14px;
+        font-family: BYekan;
+        color:var(--gray)
+    }
+    .pop-link{
+        text-decoration: none;
+        color:var(--gray);
+        font-size: 16px;
+        margin:5px;
+    }
+    .pop-link:hover{
+        color:white;
+        text-decoration: none;
+        background-color:var(--orange);
+    }
+    .jumbotron{
+        background-color: white;
     }
 </style>
