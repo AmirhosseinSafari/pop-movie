@@ -137,4 +137,48 @@ export default {
         padding: 0px;
     }
 
+    .pop-primary-btn{
+    background-color: var(--orange);
+    color:white;
+    border:none;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+.pop-primary-btn:hover{
+    background-color: white;
+    color:var(--orange);
+    transform: scale(1.05);
+}
+.pop-primary-btn:active{
+    transform: scale(0.95);;
+}
+
+
+
+
+ .pop-image-bg{
+    width: 100%;
+    
+    margin-top:0px;
+    background: url(/src/static/images/background.jpg) no-repeat;
+    background-size: cover;
+    }
+    .pop-box-container{
+        text-align: center;
+        width:500px;
+        position: absolute;
+        top:50%;
+        left:50%;
+        background-color: rgba(255,255,255,1);
+        transform: translate(-50%,-50%);
+        padding: 50px;
+        padding-top: 40px;
+        border-radius: 20px;
+    }
+    
+    .pop-box-container h2{
+        margin-bottom: 25px;
+    }
+
 </style>

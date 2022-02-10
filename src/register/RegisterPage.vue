@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="pop-image-bg">
+        <div class="pop-box-container">
         <h2>صفحه ی عضویت</h2>
         <form @submit.prevent="handleSubmit">
     
@@ -19,11 +20,12 @@
                 <div v-if="submitted && errors.has('email')" class="invalid-feedback">{{ errors.first('email') }}</div>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" :disabled="status.registering">عضویت</button>
+                <button class="pop-primary-btn" :disabled="status.registering">عضویت</button>
                 <router-link to="/login" class="btn btn-link for_link">صرف نظر</router-link>
             </div>
 
         </form>
+    </div>
     </div>
 </template>
 
@@ -61,5 +63,13 @@ export default {
 <style scoped>
     .for_link{
         text-decoration: none;
+    }
+    .pop-image-bg{
+         height: 92.5vh;
+     }
+     .pop-primary-btn{
+        font-size: 17px;
+        padding: 6px 20px;
+        border-radius: 9px;
     }
 </style>

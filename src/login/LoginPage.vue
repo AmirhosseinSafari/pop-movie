@@ -1,5 +1,6 @@
 <template>
-    <div>
+<div class="pop-image-bg">
+    <div class="pop-box-container">
         <h2>صفحه ی ورود</h2>
         <form @submit.prevent="handleSubmit">
             <div class="form-group">
@@ -13,12 +14,13 @@
                 <div v-show="submitted && !password" class="invalid-feedback">کلمه ی عبور را وارد کنید</div>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" :disabled="status.loggingIn">ورود</button>
+                <button class="pop-primary-btn" :disabled="status.loggingIn">ورود</button>
                 <img v-show="status.loggingIn" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                 <router-link to="/register" class="btn btn-link for_link">عضویت</router-link>
             </div>
         </form>
     </div>
+</div>
 </template>
 
 <script>
@@ -53,7 +55,16 @@ export default {
 </script>
 
 <style scoped>
-    .for_link{
-        text-decoration: none;
+    html, body{
+       overflow: hidden;
     }
+     .pop-image-bg{
+         height: 92.5vh;
+     }
+     .pop-primary-btn{
+        font-size: 17px;
+        padding: 6px 20px;
+        border-radius: 9px;
+    }
+    
 </style>
