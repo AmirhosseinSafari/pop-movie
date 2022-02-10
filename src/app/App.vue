@@ -41,8 +41,8 @@
         </nav>
     </header>
 
-    <div class="jumbotron">
-        <div class="container">
+    <div class="jumbotron pop-full-width">
+        <div class="">
             <div class="row">
                 <div class="col-sm-12 offset-sm-3">
                     <div v-if="alert.message" :class="`alert ${alert.type}`">{{alert.message}}</div>
@@ -83,7 +83,9 @@ export default {
         --gray:#767676;
         --orange:#FF7A00;
     }
-
+    html, body{
+       overflow-x: hidden;
+    }
    @font-face {
     font-family: BYekan;
     src: url(/src/static/fonts/BYekan+Bold.ttf);
@@ -106,7 +108,7 @@ export default {
 
     .pop-header{
         background-color:white;
-        height: 83px;
+        
         box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.1);
     }
     .pop-header-desc{
@@ -127,5 +129,12 @@ export default {
     }
     .jumbotron{
         background-color: white;
+        
     }
+    .pop-full-width{
+        margin:0px;
+        margin-top: 63px;
+        padding: 0px;
+    }
+
 </style>
