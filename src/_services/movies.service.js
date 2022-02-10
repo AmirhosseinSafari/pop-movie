@@ -2,7 +2,9 @@ import config from 'config';
 
 export const moviesService = {
     getGenres,
-    getMovies
+    getMovies,
+    getAMovie,
+    sendCommentForMovie
 };
 
 
@@ -20,6 +22,28 @@ function getMovies() {
     };
 
     return fetch(`${config.apiUrl}/api/v1/movies`, requestOptions).then(handleResponse);
+}
+
+function getAMovie(id) {
+    const requestOptions = {
+        method: 'GET'
+    };
+
+    return fetch(`${config.apiUrl}/api/v1/movies/movie/${id}`, requestOptions).then(handleResponse);
+}
+
+function sendCommentForMovie(id, token, text){
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: {
+            'movie_id': id,
+            'api_token': token,
+            'body': text
+        }    
+    };
+
+    return fetch(`${config.apiUrl}/api/v1/comments/comment`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

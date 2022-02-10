@@ -12,10 +12,10 @@
         </div>
         <p>{{oneMovie.movie.description}}</p>
 
-        <form action="">
+        <form @submit="sendingComment">
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
+                <textarea class="form-control" v-model="title" id="exampleFormControlTextarea1" rows="3" placeholder="Write your comment..."></textarea>
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -29,13 +29,22 @@
 import { mapGetters, mapActions, mapState } from "vuex";
 
 export default({
+    methods: {
+        ...mapActions('movies', ['getOneMovie','sendingAComent']),
+    },
     computed: { 
         ...mapState({movies: state => state.movie}),
-        ...mapGetters('movies', ["oneMovie"])
-    }, 
-    methods: {
-        ...mapActions('movies', ['getOneMovie']),
+        ...mapGetters('movies', ['oneMovie']),
+        sendingComment(){
+            let user = JSON.parse(localStorage.getItem('user'));
+            this.sendingAComent(this.oneMovie.movie.id,user.token,title)
+        }
     },
+    data() {
+        return {
+            title: ""
+        };
+    }, 
     created() {
         this.getOneMovie(new URL(location.href).pathname.split("/").at(-1));
     },

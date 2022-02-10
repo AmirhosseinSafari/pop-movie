@@ -37,6 +37,14 @@ const actions = {
                     dispatch('alert/error', error, { root: true });
                 }
             )
+    },
+    sendingAComent({dispatch}, {id, token, text}){
+        moviesService.sendCommentForMovie(id,token, text)
+            .then(
+                error => {
+                    dispatch('alert/error', error, { root: true });
+                }
+            )
     }
 };
 
